@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>es 1</title>
+    <body>
+      <button onclick= "console.log('click da evento')"  >cliccami da evento </button>
+      <button onclick= "funzioneClick('script')"  >cliccami da script </button>
+
+      <div>
+        <p> Non premere per cortesia </p>
+      </div>
+      <button id= "btn3" >cliccami da listener </button>
+      <button id= "btn2" >cliccami da script </button>
+      <button id= "btn1" >cliccami da evento </button>
+    <button>
+ 
+ 
+ <script>
+    var funzioneClick = function(stringa){
+   console.log("click da script "+stringa);
+   };
+   funzioneClick();
+   var funzioneClickAscoltatore = function(){
+   console.log("click da listener");
+   };  // TODO unica funzione
+   
+   
+   var rosso = true;
+    var bottone3 = document.getElementById("btn3");
+    bottone3.addEventListener("click", 
+    function(){
+      funzioneClickAscoltatore('listener');
+  
+  
+      document.getElementById("div1").setAttribute("style","background-color: pink ");
+      document.getElementById("div1").innerHTML="<h1>TI AVEVO DETTO DI NON TOCCARE MONA.<h1>"
+
+
+      if (rosso== false){
+      bottone3.removeAttribute("style");
+      rosso=true;
+    }else{
+      bottone3.removeAttribute("style","background-color: red ");
+      rosso=false;
+    }
+  });
+        
+  
+  </script>
+    </body>
+  </head>
+</html>
